@@ -1,0 +1,16 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate metadata.json
+        run: python3 -c "import json; m=json.load(open('metadata.json')); assert m['uuid'] and m['shell-version']"
+      - name: Syntax check extension.js
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq nodejs && cp extension.js /tmp/extension.mjs && node --check /tmp/extension.mjs
+      - name: ShellCheck scripts
+        run: sudo apt-get install -y -qq shellcheck && shellcheck install.sh uninstall.sh

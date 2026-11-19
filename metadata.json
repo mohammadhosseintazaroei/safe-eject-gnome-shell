@@ -1,0 +1,8 @@
+{
+  "uuid": "safe-eject@mohammadhosseintazaroei.github.io",
+  "name": "Safe Eject",
+  "description": "Top-bar menu to safely eject USB drives with one click. Quits Files, syncs, unmounts and powers off, never forces anything. Requires the safe-eject command.",
+  "shell-version": ["45", "46", "47", "48"],
+  "url": "https://github.com/mohammadhosseintazaroei/safe-eject-gnome-shell",
+  "version": 1
+}
